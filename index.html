@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!--
+      Need a visual blank slate?
+      Remove all code in `styles.css`!
+    -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+  <div class="wrap">
+  <div class="row"><label>Trumpėjimas <span class="value" id="shrinkV"></span></label><input id="shrink" type="range" min="55" max="85" value="72"></div>
+  <div class="row"><label>Šakų storis <span class="value" id="widthV"></span></label><input id="width" type="range" min="1" max="20" value="10"></div>
+  <div class="row"><label>Atsitiktinumas <span class="value" id="randomV"></span></label><input id="random" type="range" min="0" max="20" value="3"></div>
+  <div class="row"><label>Kamieno spalva</label><input id="trunkColor" type="color" value="#6b4f2a"></div>
+  <div class="row"><label>Lapų spalva</label><input id="leafColor" type="color" value="#22c55e"></div>
+  <button onclick="drawTree()">Piešti</button>
+</div>
+<canvas id="canvas" width="700" height="700"></canvas>
+</div>
+</div>
+<script src="script.js">
+
+</script>
+  </body>
+</html>
