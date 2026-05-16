@@ -9,6 +9,7 @@ body {
   margin: auto;
   padding: 20px;
   display: flex;
+  flex-wrap: wrap;
 }
 h1 {
   text-align: center;
