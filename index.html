@@ -11,17 +11,23 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-  <div class="wrap">
-  <div class="row"><label>Trumpėjimas <span class="value" id="shrinkV"></span></label><input id="shrink" type="range" min="55" max="85" value="72"></div>
-  <div class="row"><label>Šakų storis <span class="value" id="widthV"></span></label><input id="width" type="range" min="1" max="20" value="10"></div>
-  <div class="row"><label>Atsitiktinumas <span class="value" id="randomV"></span></label><input id="random" type="range" min="0" max="20" value="3"></div>
-  <div class="row"><label>Kamieno spalva</label><input id="trunkColor" type="color" value="#6b4f2a"></div>
-  <div class="row"><label>Lapų spalva</label><input id="leafColor" type="color" value="#22c55e"></div>
-  <button onclick="drawTree()">Piešti</button>
-</div>
-<canvas id="canvas" width="700" height="700"></canvas>
-</div>
-</div>
+    <div class="wrap">
+      <h1>Fraktalinis medis</h1>
+      <div class="layout">
+        <div class="panel">
+          <div class="row"><label>Kampas <span class="value" id="angleV"></span></label><input id="angle" type="range" min="5" max="60" value="25"></div>
+          <div class="row"><label>Gylis <span class="value" id="depthV"></span></label><input id="depth" type="range" min="1" max="11" value="8"></div>
+          <div class="row"><label>Pradinis ilgis <span class="value" id="lengthV"></span></label><input id="length" type="range" min="40" max="180" value="120"></div>
+          <div class="row"><label>Trumpėjimas <span class="value" id="shrinkV"></span></label><input id="shrink" type="range" min="55" max="85" value="72"></div>
+          <div class="row"><label>Šakų storis <span class="value" id="widthV"></span></label><input id="width" type="range" min="1" max="20" value="10"></div>
+          <div class="row"><label>Atsitiktinumas <span class="value" id="randomV"></span></label><input id="random" type="range" min="0" max="20" value="3"></div>
+          <div class="row"><label>Kamieno spalva</label><input id="trunkColor" type="color" value="#6b4f2a"></div>
+          <div class="row"><label>Lapų spalva</label><input id="leafColor" type="color" value="#22c55e"></div>
+          <button onclick="drawTree()">Piešti</button>
+        </div>
+        <canvas id="canvas" width="700" height="700"></canvas>
+      </div>
+    </div>
 <script src="script.js">
 
 </script>
