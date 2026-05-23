@@ -1,4 +1,9 @@
-const ids = ['angle','depth','length','shrink','width','random'];
+// const lib =  require('./script2.js');
+import {drawChristmasTrees} from "./script2.js";
+import {drawMoon, drawStars} from "./script3.js";
+
+
+const ids = ['angle','depth','length','shrink','width','random','randomL'];
 ids.forEach(id => {
 const el = document.getElementById(id);
 const out = document.getElementById(id+'V');
@@ -8,8 +13,20 @@ sync();
 });
 ['trunkColor','leafColor'].forEach(id=>document.getElementById(id).addEventListener('input', drawTree));
 
+const btn = document.getElementById('drawBtn');
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+
+
+canvas.style.marginLeft = "20px";
+const width = 500;
+const height = 500;
+canvas.width = width;
+canvas.height = height;
+canvas.style.width = `${width}px`;
+canvas.style.height = `${height}px`;
+
+
 
 function val(id){ return document.getElementById(id).value; }
 function rand(n){ return (Math.random()*2-1)*n; }
@@ -93,7 +110,25 @@ function drawTree(){
 let widthRand = Math.random() * (2 - 1.5) + 1.5;
 
 ctx.clearRect(0,0,canvas.width,canvas.height);
-branch(canvas.width/2, canvas.height-20, Number(val('length')), 90, Number(val('depth')), Number(val('width')));
+const topGrad = ctx.createLinearGradient(0, 0, 0, height *0.35);
+topGrad.addColorStop(0, "#000090");
+topGrad.addColorStop(1, "red");
+
+ctx.fillStyle = topGrad;
+ctx.fillRect(0, 0, width, height *0.35);
+
+const bottomGrad = ctx.createLinearGradient(0, height * 0.35, 0, height);
+bottomGrad.addColorStop(0, "#006000");
+bottomGrad.addColorStop(1, "#00ff00");
+
+ctx.fillStyle = bottomGrad;
+ctx.fillRect(0, height *0.35, width, height);
+
+drawStars(ctx, width, height, 50);
+drawMoon(ctx, width * 0.3, height * 0.2, 50);
+
+drawChristmasTrees(ctx, width, height, 70);
+branch(canvas.width/2, canvas.height-10, Number(val('length')), 90, Number(val('depth')), Number(val('width')));
 }
 
 function drawLeaf(x, y, angle){
@@ -105,10 +140,13 @@ function drawLeaf(x, y, angle){
     ctx.fillStyle = val('leafColor');
   
     ctx.beginPath();
-    ctx.ellipse(0, 0, 8, 14, 0, 10, Math.PI * 2.5);
+    ctx.ellipse(0, 0, Number(val('randomL')), 10, 15, 8, Math.PI * 2.5);
     ctx.fill();
   
     ctx.restore();
   }
 
-drawTree();
+btn.addEventListener("click", () => {drawTree()});
+
+  drawTree();
+  // drawChristmasTrees(ctx, width, height, 10);
