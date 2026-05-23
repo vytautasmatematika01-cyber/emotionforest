@@ -1,6 +1,6 @@
 // const lib =  require('./script2.js');
 import {drawChristmasTrees} from "./script2.js";
-import {drawMoon, drawStars} from "./script3.js";
+import {drawMoon, drawStars, drawCloud} from "./script3.js";
 
 
 const ids = ['angle','depth','length','shrink','width','random','randomL'];
@@ -126,6 +126,12 @@ ctx.fillRect(0, height *0.35, width, height);
 
 drawStars(ctx, width, height, 50);
 drawMoon(ctx, width * 0.3, height * 0.2, 50);
+drawCloud(ctx, width * 0.35, height * 0.2, 1);
+drawCloud(ctx, width * 0.2, height * 0.15, 1.2);
+drawCloud(ctx, width * 0.4, height * 0.286, 0.4);
+drawCloud(ctx, width * 0.45, height * 0.282, 0.4);
+drawCloud(ctx, width * 0.6, height * 0.285, 0.4);
+drawCloud(ctx, width * 0.75, height * 0.15, 1.5);
 
 drawChristmasTrees(ctx, width, height, 70);
 branch(canvas.width/2, canvas.height-10, Number(val('length')), 90, Number(val('depth')), Number(val('width')));
